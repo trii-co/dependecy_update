@@ -10,8 +10,8 @@ runs:
   using: "composite"
   steps: 
     - name: Flutter Clean
-        run: rm pubspec.lock; flutter clean
-        continue-on-error: true
+      run: rm pubspec.lock; flutter clean
+      continue-on-error: true
 
-      - name: Get Dependencies
-        run: echo ${{ inputs.PUB_TOKEN }} | dart pub token add https://pub.trii.ws; flutter pub get; flutter pub upgrade
+    - name: Get Dependencies
+      run: echo ${{ inputs.PUB_TOKEN }} | dart pub token add https://pub.trii.ws; flutter pub get; flutter pub upgrade
